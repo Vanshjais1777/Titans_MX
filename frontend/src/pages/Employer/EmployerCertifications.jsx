@@ -4,7 +4,7 @@ import EmployerSidebar from "../../components/EmployerSidebar.jsx";
 import GovtSidebar from "../../components/GovtSidebar";
 import EmployeeSidebar from "../../components/EmployeeSidebar";
 
-import { useAuth } from "../../context/AuthContext.jsx"; // Import userAuth context
+import { useAuth } from "../../context/AuthContext.js"; // Import userAuth context
 
 const EmployerCertifications = () => {
     const certifications = [
