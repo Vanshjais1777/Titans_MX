@@ -4,9 +4,9 @@ import path from "path";
 import dotenv from 'dotenv';
 import connectDB from "./config/mongoDB.js";
 import adminAuthRouter from './routes/authRoutes/adminAuthRoutes.js';
-import userAuthRouter from './routes/authRoutes/userAuthRoutes.js'
-import jobRouter from './routes/jobRoutes/jobRoutes.js'
-import employerProfileRouter from './routes/profileRoutes/employerProfileRoutes.js'
+import userAuthRouter from './routes/authRoutes/userAuthRoutes.js';
+import jobRouter from './routes/jobRoutes/jobRoutes.js';
+import employerProfileRouter from './routes/profileRoutes/employerProfileRoutes.js';
 import employeeProfileRouter from './routes/profileRoutes/employeeProfileRoutes.js';
 import conversationRouter from './routes/conversationRoutes/conversationRoutes.js';
 import coursesRoutes from './routes/courseRoutes/courseRoutes.js';
@@ -18,25 +18,31 @@ import adminRouter from './routes/adminRoutes/adminRoutes.js';
 import requestRoutes from './routes/requestRoutes/requestRoutes.js';
 dotenv.config();
 
-
 const app = express();
-
-
-
-
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
 // Static Folder for Uploads
 app.use("/uploads", express.static(path.join(path.resolve(), "uploads")));
 
+// CORS Configuration
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+    ? process.env.ALLOWED_ORIGINS.split(',')
+    : ['http://localhost:5173', 'https://titans-mx-frontend.onrender.com'];
 
-// using CORS
-app.use(cors());
-
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error(`CORS policy does not allow access from origin: ${origin}`));
+        }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    credentials: true, // Allow credentials like cookies, authorization headers, etc.
+}));
 
 // DB Connection
 connectDB();
@@ -45,7 +51,7 @@ app.get('/', (req, res) => {
     res.send('API is working...');
 });
 
-
+// Routes
 app.use('/api/auth/admin', adminAuthRouter);
 app.use('/api/auth/user', userAuthRouter);
 
@@ -60,29 +66,33 @@ app.use('/api/job', jobRouter);
 app.use('/api/conversation', conversationRouter);
 
 // Course Router
-// Use the course routes
-app.use('/api/courses', coursesRoutes);  // Prefix all routes with `/api`
+app.use('/api/courses', coursesRoutes);
 
-//Coin Transaction Router
-app.use('/api/coins/',coinsRoutes);
+// Coin Transaction Router
+app.use('/api/coins', coinsRoutes);
 
-//Routes for resume
-app.use('/api/resume',resumeRoutes);
+// Routes for resume
+app.use('/api/resume', resumeRoutes);
 
-//Routes for application
-app.use('/api/applicant',applicantRoutes);
+// Routes for application
+app.use('/api/applicant', applicantRoutes);
 
-//Routes for mentorship
-app.use('/api/mentorship',mentorship);
+// Routes for mentorship
+app.use('/api/mentorship', mentorship);
 
 // Routes for admin information
-app.use('/api/admin',adminRouter);
+app.use('/api/admin', adminRouter);
 
-app.use('/api/request',requestRoutes);
+app.use('/api/request', requestRoutes);
 
+// Error Handling for Uncaught Errors
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).json({ error: 'Something went wrong!' });
+    if (err.name === 'Error') {
+        res.status(400).json({ error: err.message });
+    } else {
+        res.status(500).json({ error: 'Something went wrong!' });
+    }
 });
 
 const PORT = process.env.PORT || 4000;
