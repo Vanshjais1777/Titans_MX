@@ -6,7 +6,7 @@ Skill Sphere is a full-stack web platform designed to connect users with interns
 
 ## 🌐 Live Demo
 
-Access the live platform here: [Skill Sphere Live](https://skill-sphere-frontend.onrender.com)
+Access the live platform here: [Skill Sphere Live](https://titans-mx-frontend.onrender.com/)
 
 ---
 
