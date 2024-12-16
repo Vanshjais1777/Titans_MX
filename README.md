@@ -6,7 +6,7 @@ Skill Sphere is a full-stack web platform designed to connect users with interns
 
 ## 🌐 Live Demo
 
-Access the live platform here: [Skill Sphere Live](https://roomi-ai-frontend.onrender.com)
+Access the live platform here: [Skill Sphere Live](https://skill-sphere-frontend.onrender.com)
 
 ---
 
@@ -36,22 +36,3 @@ Access the live platform here: [Skill Sphere Live](https://roomi-ai-frontend.onr
 
 ### **Authentication**
 - JSON Web Tokens (JWT)
-
----
-
-## 📸 Screenshots
-
-### 1. **Homepage**
-![Homepage Screenshot](https://via.placeholder.com/800x400?text=Homepage+Screenshot)
-
-### 2. **Job Recommendations**
-![Recommendations Screenshot](https://via.placeholder.com/800x400?text=Job+Recommendations)
-
----
-
-## 🚀 Installation and Setup
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/Vanshjais1777/Skill-Sphere.git
-cd Skill-Sphere
