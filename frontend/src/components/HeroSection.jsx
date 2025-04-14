@@ -282,7 +282,7 @@ const Hero = () => {
 
     setTimeout(async () => {
       const keyword = searchKeyword.trim().toLowerCase();
-      
+
       let response = await axios.get(import.meta.env.VITE_BACKEND_URL + "/api/job/read-jobs", {
         params: { keyword },
         headers: {
@@ -334,21 +334,21 @@ const Hero = () => {
 
   return (
     <div
-      className="relative bg-cover bg-center h-screen overflow-hidden"
-      style={{ backgroundImage: "url('src/assets/home_image.jpg')" }}>
+      className="relative bg-gradient-to-br from-cyan-400 to-orange-100 bg-cover bg-center h-screen overflow-hidden"
+    >
       <div className="absolute inset-0 bg-black opacity-30"></div>
       <div className="relative flex flex-col items-center justify-center h-full px-4 text-center text-white">
-        <h1 className="text-3xl font-bold md:text-5xl">
+        <h1 className="text-3xl font-bold md:text-5xl text-gray-900">
           Find The Great Exciting & Remote-Friendly Jobs
         </h1>
-        <p className="mt-4 text-sm md:text-lg">
+        <p className="mt-4 text-sm md:text-lg text-gray-900">
           Getting a new job is never easy. Check what new jobs we have in store
           for you on Skill Sphere.
         </p>
 
         {!showSearchFilter && (
           <button
-            className="w-full max-w-lg p-4 mt-6 font-bold text-lg text-white bg-gradient-to-r from-green-400 to-blue-500 rounded-md shadow-lg hover:scale-105 transition-transform"
+            className="w-full max-w-lg p-4 mt-6 font-bold text-lg text-gray-800 bg-gradient-to-r from-green-400 to-blue-500 rounded-md shadow-lg hover:scale-105 transition-transform"
             onClick={() => setShowSearchFilter(true)}>
             Explore the Job / Internship of Your Choice by our Job & Internship
             Prediction Model

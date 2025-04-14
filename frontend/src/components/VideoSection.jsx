@@ -2,20 +2,9 @@ import React from "react";
 
 const VideoSection = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
-      {/* Fullscreen Video */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        src="src/assets/Video_1.mp4" // Replace with your video URL
-        autoPlay
-        loop
-        muted
-      >
-        Your browser does not support the video tag.
-      </video>
-
+    <section className="relative h-screen w-full overflow-hidden bg-gradient-to-tr from-green-300 via-white to-green-300">
       {/* Overlay Content */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white px-6">
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-black px-6">
         <h2 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
           "Your Future Starts Here."
         </h2>

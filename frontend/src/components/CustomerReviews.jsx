@@ -65,7 +65,7 @@ const CustomerReviews = () => {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="bg-gradient-to-r from-purple-200 via-purple-100 to-purple-200 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl duration-300"
+              className="bg-gradient-to-br from-green-400 to-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl duration-300"
             >
               <img
                 src={review.image}
