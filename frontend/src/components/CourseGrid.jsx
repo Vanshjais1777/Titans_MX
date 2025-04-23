@@ -112,7 +112,7 @@ const CourseGrid = () => {
     <div>
       <div className="min-h-screen bg-green-50 flex mt-24">
         {/* Sidebar for Categories */}
-        <aside className="w-1/4 bg-white shadow-lg p-4 h-screen sticky top-0">
+        <aside className="w-1/4 bg-white shadow-lg p-4 h-screen sticky top-0 hidden md:block">
           <h2 className="text-lg font-bold text-green-700 mb-4">Categories</h2>
           <ul className="space-y-2">
             {categories.map((category, index) => (
@@ -129,7 +129,7 @@ const CourseGrid = () => {
         </aside>
 
         {/* Main Content Section */}
-        <div className="w-3/4 overflow-auto">
+        <div className="md:w-3/4 w-full overflow-auto">
           <header className="text-center py-8 bg-white shadow-md mb-4 sticky top-0 z-10">
             <h1 className="text-3xl font-bold text-green-700">{selectedCategory} Courses</h1>
             <p className="text-lg text-green-600 mt-2">

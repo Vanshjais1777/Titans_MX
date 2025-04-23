@@ -101,11 +101,11 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-lg z-50 border-b border-gray-200 h-20">
+    <header className="fixed top-0 left-0 w-screen bg-white shadow-lg z-50 border-b border-gray-200 lg:h-20 h-16">
       <div className="max-w-8xl mx-auto flex items-center justify-between px-4 md:px-10 h-full relative">
         {/* Left Section - Logo */}
         <div
-          className="flex items-center space-x-3 cursor-pointer"
+          className="flex items-center space-x-2 cursor-pointer"
           onClick={() => {
             setActivePage("Home");
             navigateTo("Home");
@@ -140,49 +140,19 @@ const Header = () => {
               </button>
             )
           )}
-
         </nav>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden text-gray-800 text-2xl focus:outline-none"
-          onClick={toggleMobileMenu}
-        >
-          {mobileMenuVisible ? <FaTimes /> : <FaBars />}
-        </button>
-
-        {/* Mobile Menu */}
-        {mobileMenuVisible && (
-          <div className="absolute top-20 left-0 w-full bg-white shadow-md border-t border-gray-200 flex flex-col items-start space-y-4 px-4 py-6 md:hidden">
-            {["Home", "Opportunities", "Training", "Certifications", "Counselling"].map(
-              (item) => (
-                <button
-                  key={item}
-                  className="text-lg font-medium text-gray-800 hover:text-green-600 w-full text-left"
-                  onClick={() => {
-                    setActivePage(item);
-                    navigateTo(item);
-                    setMobileMenuVisible(false);
-                  }}
-                >
-                  {item}
-                </button>
-              )
-            )}
-          </div>
-        )}
-
         {/* Right Section */}
-        <div className="relative flex items-center space-x-6 ml-auto">
-          <button
-            className="bg-blue-600 text-white p-4 rounded-full hover:bg-blue-500 cursor-pointer transition-all duration-300"
+        <div className="relative flex items-center space-x-3 ml-auto">
+          {isLoggedIn && <button
+            className="bg-blue-600 text-white p-3 lg:block hidden rounded-full hover:bg-blue-500 cursor-pointer transition-all duration-300"
             onClick={() => {
               setActivePage("Chat");
               navigateTo("Chat");
             }}
           >
-            <FaCommentAlt className="text-md" />
-          </button>
+            <FaCommentAlt className="text-sm" />
+          </button>}
 
           {isLoggedIn ? (
             <>
@@ -190,7 +160,7 @@ const Header = () => {
                 className="flex items-center space-x-2 text-gray-800 hover:text-green-600"
                 onClick={() => setDropdownVisible(!dropdownVisible)}
               >
-                <FaUserCircle className="text-5xl" />
+                <FaUserCircle className="text-4xl" />
               </button>
 
               {dropdownVisible && (
@@ -214,14 +184,43 @@ const Header = () => {
               )}
             </>
           ) : (
-            <div className="flex space-x-3 ml-4">
+            <div className="">
               <button
-                className="flex items-center bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors"
+                className="flex items-center bg-green-500 text-white py-2 px-3 lg:py-2 lg:px-4 rounded-md hover:bg-green-600 transition-colors"
                 onClick={() => navigate("/user/login")}
               >
                 <FaSignInAlt className="mr-2" />
-                <span>Sign In</span>
+                <p className="text-sm flex justify-center items-center w-11">Sign In</p>
               </button>
+            </div>
+          )}
+
+          {/* Mobile Menu Toggle */}
+          {isLoggedIn && <button
+            className="md:hidden text-gray-800 text-2xl focus:outline-none ml-2"
+            onClick={toggleMobileMenu}
+          >
+            {mobileMenuVisible ? <FaTimes /> : <FaBars />}
+          </button>}
+
+          {/* Mobile Menu */}
+          {mobileMenuVisible && (
+            <div className="absolute top-12 w-screen right-0 bg-white shadow-md border-t border-gray-200 flex flex-col items-center justify-center space-y-3 px-8 py-4 md:hidden">
+              {["Home", "Opportunities", "Training", "Certifications", "Counselling"].map(
+                (item) => (
+                  <button
+                    key={item}
+                    className="text-lg font-medium text-gray-800 hover:text-green-600 w-full text-center"
+                    onClick={() => {
+                      setActivePage(item);
+                      navigateTo(item);
+                      setMobileMenuVisible(false);
+                    }}
+                  >
+                    {item}
+                  </button>
+                )
+              )}
             </div>
           )}
         </div>

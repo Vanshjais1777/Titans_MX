@@ -81,16 +81,15 @@ const CounsellingPage = () => {
   );
 
   return (
-    <div className="flex h-screen">
-      <GovtSidebar />
+    <div className="flex h-screen mt-16">
       <div className="bg-gray-50 min-h-screen font-sans w-screen overflow-y-auto">
         {/* Header Section */}
         <header className="bg-gradient-to-r from-green-300 via-white to-green-100 text-gray-800 py-12">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <h1 className="text-4xl font-bold leading-tight">
+            <h1 className="md:text-4xl text-2xl font-bold leading-tight">
               Find Career Counsellors Near You
             </h1>
-            <p className="mt-4 text-lg">
+            <p className="mt-4 md:text-lg text-sm  md:font-normal font-medium">
               Get career counselling from top professionals to achieve your
               dreams.
             </p>

@@ -338,7 +338,7 @@ const Hero = () => {
     >
       <div className="absolute inset-0 bg-black opacity-30"></div>
       <div className="relative flex flex-col items-center justify-center h-full px-4 text-center text-white">
-        <h1 className="text-3xl font-bold md:text-5xl text-gray-900">
+        <h1 className="text-2xl font-bold md:text-5xl text-gray-900">
           Find The Great Exciting & Remote-Friendly Jobs
         </h1>
         <p className="mt-4 text-sm md:text-lg text-gray-900">
@@ -348,7 +348,7 @@ const Hero = () => {
 
         {!showSearchFilter && (
           <button
-            className="w-full max-w-lg p-4 mt-6 font-bold text-lg text-gray-800 bg-gradient-to-r from-green-400 to-blue-500 rounded-md shadow-lg hover:scale-105 transition-transform"
+            className="w-full max-w-lg p-4 mt-6 font-bold text-md text-gray-800 bg-gradient-to-r from-green-400 to-blue-500 rounded-md shadow-lg hover:scale-105 transition-transform"
             onClick={() => setShowSearchFilter(true)}>
             Explore the Job / Internship of Your Choice by our Job & Internship
             Prediction Model
