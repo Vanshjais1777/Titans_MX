@@ -7,4 +7,13 @@ export default defineConfig({
   resolve: {
     extensions: ['.js', '.jsx'], // Ensures both .js and .jsx are resolved
   },
+  base: './', // This ensures assets are loaded correctly in production
+  build: {
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name].[ext]'
+      }
+    }
+  }
 })

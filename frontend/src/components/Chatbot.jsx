@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import axios from 'axios';
+import chatbotEmp from "../assets/chatbot-emp.png";
+
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [history, setHistory] = useState([]);
@@ -102,8 +104,7 @@ const Chatbot = () => {
                 </div>
               ))}
               <img
-                src="src/assets/chatbot-emp.png" // Replace with your character image URL
-                alt="Character"
+                src={chatbotEmp} alt="Chatbot Character"
                 className="w-64 h-80 object-cover"
               />
             </div>

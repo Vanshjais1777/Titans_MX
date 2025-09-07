@@ -1,7 +1,7 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaReact, FaJava } from "react-icons/fa"; // Importing some example icons
 import { useNavigate } from "react-router-dom";
-
+import counsellorimg from "../assets/img1.jpg";
 const Profile = () => {
   const navigate = useNavigate();
   return (
@@ -24,7 +24,7 @@ const Profile = () => {
         {/* Profile Picture Section */}
         <div className="relative -mt-16 flex justify-center">
           <img
-            src="src/assets/img1.jpg" // Replace with profile image
+            src={counsellorimg} // Using the passed image prop
             alt="Profile"
             className="w-32 h-32 rounded-full border-4 border-white shadow-xl"
           />

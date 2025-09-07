@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Profile from "./Profile"; // Import the Profile component
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
+import img3 from "../assets/img3.jpg";
 
 const TalentSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -12,42 +15,42 @@ const TalentSection = () => {
       name: "Jane Smith",
       category: "Tech Internships",
       location: "New York",
-      image: "src/assets/img1.jpg",
+      image: img1,
     },
     {
       id: 2,
       name: "John Doe",
       category: "Business & Management",
       location: "San Francisco",
-      image: "src/assets/img2.jpg",
+      image: img2,
     },
     {
       id: 3,
       name: "Emily Johnson",
       category: "Creative Fields",
       location: "India",
-      image: "src/assets/img3.jpg",
+      image: img3,
     },
     {
       id: 4,
       name: "Michael Brown",
       category: "Tech Internships",
       location: "New York",
-      image: "src/assets/img2.jpg",
+      image: img2,
     },
     {
       id: 5,
       name: "Sophia Wilson",
       category: "Business & Management",
       location: "India",
-      image: "src/assets/img3.jpg",
+      image: img3,
     },
     {
       id: 6,
       name: "Liam Garcia",
       category: "Creative Fields",
       location: "India",
-      image: "src/assets/img1.jpg",
+      image: img1,
     },
   ];
   const filteredCounsellors = counsellors.filter(
