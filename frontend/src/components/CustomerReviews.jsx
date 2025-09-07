@@ -1,4 +1,7 @@
 import React from "react";
+import custom1 from "../assets/custom1.jpg"
+import custom2 from "../assets/custom2.jpg"
+import custom3 from "../assets/custom3.jpg"
 
 const reviews = [
   {
@@ -7,7 +10,7 @@ const reviews = [
     review: "The best useful website",
     description:
       "I was truly impressed by the level of detail and thoughtfulness that went into the design. The website is intuitive and made a real impact on my workflow.",
-    image: "src/assets/custom1.jpg",
+    image: { custom1 },
   },
   {
     name: "Brenda R. Smith",
@@ -15,7 +18,7 @@ const reviews = [
     review: "Ranking is the #1!",
     description:
       "Thanks to this platform, our online presence has skyrocketed. The tools are powerful, and the results speak for themselves. Highly recommended!",
-    image: "src/assets/custom2.jpg",
+    image: { custom2 },
   },
   {
     name: "Brian B. Wilkerson",
@@ -23,7 +26,7 @@ const reviews = [
     review: "The website is SEO friendly",
     description:
       "Finally, a website that truly understands the needs of modern businesses. The SEO optimization is top-notch, helping us achieve new milestones.",
-    image: "src/assets/custom3.jpg",
+    image: { custom3 },
   },
   {
     name: "Miguel L. Benbow",
@@ -31,7 +34,7 @@ const reviews = [
     review: "100% secure and safe website",
     description:
       "Security has always been a priority for us, and this website delivers. It's reliable, fast, and keeps our data safe, giving us peace of mind.",
-    image: "src/assets/custom2.jpg",
+    image: { custom2 },
   },
   {
     name: "Hilda A. Sheppard",
@@ -39,7 +42,7 @@ const reviews = [
     review: "Very developer-friendly website",
     description:
       "The development team loves it! The platform is easy to integrate and provides all the necessary documentation to get started quickly.",
-    image: "src/assets/custom3.jpg",
+    image: { custom3 },
   },
   {
     name: "Oscar M. Bailey",
@@ -47,7 +50,7 @@ const reviews = [
     review: "A revolutionary experience!",
     description:
       "This website has redefined how we manage our operations. The innovative features and seamless performance have made it a game-changer for our company.",
-    image: "src/assets/custom1.jpg",
+    image: { custom1 },
   },
 ];
 
